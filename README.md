@@ -32,7 +32,7 @@ The legend on top/left corner displays the following information:
 - Each dot is represented by a 16x16 circle
 - White dots appear on one side of the line
 - Black dots appear on the other side of the line
-- Dots with an inner and smaller green circle indicate dots that appear on the same side of both, the pre-defined line (blue) and the line found by the algorithm
+- Dots with an inner and smaller green circle indicate dots that appear on the same side of both, the pre-defined line (blue) and the line found by the algorithm (red)
 - Dots with an inner red circle indicate dots on the wrong side of the algorithm's line
 
 
