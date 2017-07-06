@@ -29,9 +29,8 @@ The legend on the top/left corner displays the following information:
 
 ### The dots on the screen
 
-Each dot uses four color combinations to represent four different states:
+Each dot (represented by a 16x16 circle) uses four colors to represent six different states:
 
-- Each dot is represented by a 16x16 circle
 - White dots appear on one side of the line
 - Black dots appear on the other side of the line
 - Dots with an inner and smaller green circle indicate dots that appear on the same side of both, the pre-defined line (blue) and the line found by the algorithm (red)
