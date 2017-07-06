@@ -18,7 +18,7 @@ Please note that some parameters in the implementation have been intentionally a
 
 ### Legend information
 
-The legend on top/left corner displays the following information:
+The legend on the top/left corner displays the following information:
 
 - The weights' values (w1, w2 and w3)
 - The user defined line equation (blue)
@@ -28,6 +28,8 @@ The legend on top/left corner displays the following information:
 - And the runtime
 
 ### The dots on the screen
+
+Each dot uses four color combinations to represent four different states:
 
 - Each dot is represented by a 16x16 circle
 - White dots appear on one side of the line
