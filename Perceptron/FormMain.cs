@@ -35,9 +35,10 @@ namespace Perceptron {
             this.SetStyle(ControlStyles.ResizeRedraw, false);
 
             this.KeyDown += (object o, KeyEventArgs s) => {
-                if(s.KeyCode == Keys.Enter)
+                if(s.KeyCode == Keys.Enter) {
                     SetNewParams();
-                Init();
+                    Init();
+                }
             };
 
             sw = new Stopwatch();
