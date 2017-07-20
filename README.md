@@ -24,8 +24,8 @@ The legend on the top/left corner displays the following information:
 - The user defined line equation (blue)
 - The line equation "found" by the algorithm (red)
 - The frames/second
-- The number of iterations the training algorithm has been executed
-- And the runtime
+- The number of times (iterations) the training algorithm has been executed
+- The total runtime
 
 ### The dots on the screen
 

@@ -171,6 +171,7 @@ namespace Perceptron {
             double y2 = (-brain.Weigths[2] - brain.Weigths[0] * x2) / brain.Weigths[1];
             g.DrawLine(Pens.Red, (float)x1, (float)y1, (float)x2, (float)y2);
 
+            // Draw data points
             foreach(DataPoint dp in points) {
                 dp.Render(g);
 
@@ -181,6 +182,7 @@ namespace Perceptron {
                 }
             }
 
+            // Legend background
             g.ResetTransform();
             using(SolidBrush sb = new SolidBrush(Color.FromArgb(230, Color.White))) {
                 g.FillRectangle(sb, 0, 0, 200, (brain.Weigths.Length + 13) * 10);
@@ -189,13 +191,15 @@ namespace Perceptron {
                 g.FillRectangle(sb, 0, 0, 200, (brain.Weigths.Length + 13) * 10);
             }
 
+            // Legend - Weights
             string rm = isDone && (DateTime.Now.Millisecond < 750) ? " √" : "";
             int y = 10;
             for(int i = 0; i < brain.Weigths.Length; i++) {
-                g.DrawString($"w{i + 1} = " + $"{brain.Weigths[i]:F2}".PadLeft(7) + rm, mono, Brushes.Black, 10, y);
+                g.DrawString($"w{i + 1} = " + $"{brain.Weigths[i]:F4}".PadLeft(9) + rm, mono, Brushes.Black, 10, y);
                 y += 10;
             }
 
+            // Legend - Equations
             y += 10;
             g.DrawString($"{DataPoint.m:F2}".PadLeft(7) + "x + " + $"{DataPoint.b:F2}".PadLeft(7), mono, Brushes.Blue, 10, y);
             y += 10;
@@ -203,6 +207,7 @@ namespace Perceptron {
             double b = y1 - m * x1;
             g.DrawString($"{m:F2}".PadLeft(7) + "x + " + $"{b:F2}".PadLeft(7), mono, Brushes.Red, 10, y);
 
+            // Legend - Misc
             y += 10 * 2;
             g.DrawString("FPS: " + $"{++fCounter * 1000.0 / sw.ElapsedMilliseconds:F2}".PadLeft(11), mono, Brushes.Black, 10, y);
             y += 10;
@@ -211,8 +216,10 @@ namespace Perceptron {
             if(!isDone) runTime = DateTime.Now - startTime;
             g.DrawString("RnT: " + $"{runTime.Hours:00}:{runTime.Minutes:00}:{runTime.Seconds:00}.{runTime.Milliseconds:000}", mono, Brushes.Black, 10, y);
 
+            // Legend - Help
             y += 10 * 2;
-            g.DrawString($"Press [ENTER]", mono, Brushes.Gray, 10, y);
+            g.DrawString("Press", mono, Brushes.Gray, 10, y);
+            g.DrawString("      [ENTER]", mono, Brushes.Purple, 10, y);
             y += 10;
             g.DrawString($"To change parameters", mono, Brushes.Gray, 10, y);
         }
